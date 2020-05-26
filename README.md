@@ -8,7 +8,9 @@
 
 7天能写什么呢？类似 gin 的 web 框架？类似 groupcache 的分布式缓存？或者一个简单的 Python 解释器？希望这个仓库能给你答案。
 
-推荐先阅读 **[Go 语言简明教程](https://geektutu.com/post/quick-golang.html)**，一篇文章了解Go的基本语法、并发编程，依赖管理等内容
+推荐先阅读 **[Go 语言简明教程](https://geektutu.com/post/quick-golang.html)**，一篇文章了解Go的基本语法、并发编程，依赖管理等内容。
+
+期待关注我的「[知乎专栏](https://zhuanlan.zhihu.com/geekgo)」和「[微博](http://weibo.com/geektutu)」，查看最近的文章和动态。
 
 ### 7天用Go从零实现Web框架 - Gee
 
@@ -16,7 +18,7 @@
 
 - 第一天：[前置知识(http.Handler接口)](https://geektutu.com/post/gee-day1.html) | [Code](gee-web/day1-http-base)
 - 第二天：[上下文设计(Context)](https://geektutu.com/post/gee-day2.html) | [Code](gee-web/day2-context)
-- 第三天：[Tire树路由(Router)](https://geektutu.com/post/gee-day3.html) | [Code](gee-web/day3-router)
+- 第三天：[Trie树路由(Router)](https://geektutu.com/post/gee-day3.html) | [Code](gee-web/day3-router)
 - 第四天：[分组控制(Group)](https://geektutu.com/post/gee-day4.html) | [Code](gee-web/day4-group)
 - 第五天：[中间件(Middleware)](https://geektutu.com/post/gee-day5.html) | [Code](gee-web/day5-middleware)
 - 第六天：[HTML模板(Template)](https://geektutu.com/post/gee-day6.html) | [Code](gee-web/day6-template)
@@ -33,6 +35,20 @@
 - 第五天：[分布式节点](https://geektutu.com/post/geecache-day5.html) | [Code](gee-cache/day5-multi-nodes)
 - 第六天：[防止缓存击穿](https://geektutu.com/post/geecache-day6.html) | [Code](gee-cache/day6-single-flight)
 - 第七天：[使用 Protobuf 通信](https://geektutu.com/post/geecache-day7.html) | [Code](gee-cache/day7-proto-buf)
+
+### 7天用Go从零实现ORM框架 GeeORM
+
+[GeeORM](https://geektutu.com/post/geeorm.html) 是一个模仿 [gorm](https://github.com/jinzhu/gorm) 和 [xorm](https://github.com/go-xorm/xorm) 的 ORM 框架
+
+gorm 准备推出完全重写的 v2 版本(目前还在开发中)，相对 gorm-v1 来说，xorm 的设计更容易理解，所以 geeorm 接口设计上主要参考了 xorm，一些细节实现上参考了 gorm。
+
+- 第一天：[database/sql 基础](https://geektutu.com/post/geeorm-day1.html) | [Code](gee-orm/day1-database-sql)
+- 第二天：[对象表结构映射](https://geektutu.com/post/geeorm-day2.html) | [Code](gee-orm/day2-reflect-schema)
+- 第三天：[记录新增和查询](https://geektutu.com/post/geeorm-day3.html) | [Code](gee-orm/day3-save-query)
+- 第四天：[链式操作与更新删除](https://geektutu.com/post/geeorm-day4.html) | [Code](gee-orm/day4-chain-operation)
+- 第五天：[实现钩子(Hooks)](https://geektutu.com/post/geeorm-day5.html) | [Code](gee-orm/day5-hooks)
+- 第六天：[支持事务(Transaction)](https://geektutu.com/post/geeorm-day6.html) | [Code](gee-orm/day6-transaction)
+- 第七天：[数据库迁移(Migrate)](https://geektutu.com/post/geeorm-day7.html) | [Code](gee-orm/day7-migrate)
 
 ### WebAssembly 使用示例
 
@@ -54,13 +70,13 @@ What can I write in 7 days? A gin-like web framework? A distributed cache like g
 
 - Day 1 - http.Handler Interface Basic [Code](gee-web/day1-http-base)
 - Day 2 - Design a Flexiable Context [Code](gee-web/day2-context)
-- Day 3 - Router with Tire-Tree Algorithm [Code](gee-web/day3-router)
+- Day 3 - Router with Trie-Tree Algorithm [Code](gee-web/day3-router)
 - Day 4 - Group Control [Code](gee-web/day4-group)
 - Day 5 - Middleware Mechanism [Code](gee-web/day5-middleware)
 - Day 6 - Embeded Template Support [Code](gee-web/day6-template)
 - Day 7 - Panic Recover & Make it Robust [Code](gee-web/day7-panic-recover)
 
-## Distributed Cache - Geecache
+## Distributed Cache - GeeCache
 
 [GeeCache](https://geektutu.com/post/geecache.html) is a [groupcache](https://github.com/golang/groupcache)-like distributed cache
 
@@ -71,6 +87,20 @@ What can I write in 7 days? A gin-like web framework? A distributed cache like g
 - Day 5 - Communication between Distributed Nodes [Code](gee-cache/day5-multi-nodes)
 - Day 6 - Cache Breakdown & Single Flight  | [Code](gee-cache/day6-single-flight)
 - Day 7 - Use Protobuf as RPC Data Exchange Type | [Code](gee-cache/day7-proto-buf)
+
+## Object Relational Mapping - GeeORM
+
+[GeeORM](https://geektutu.com/post/geeorm.html) is a [gorm](https://github.com/jinzhu/gorm)-like and [xorm](https://github.com/go-xorm/xorm)-like object relational mapping library
+
+Xorm's desgin is easier to understand than gorm-v1, so the main designs references xorm and some detailed implementions references gorm-v1.
+
+- Day 1 - database/sql Basic | [Code](gee-orm/day1-database-sql)
+- Day 2 - Object Schame Mapping | [Code](gee-orm/day2-reflect-schema)
+- Day 3 - Insert and Query | [Code](gee-orm/day3-save-query)
+- Day 4 - Chain, Delete and Update | [Code](gee-orm/day4-chain-operation)
+- Day 5 - Support Hooks | [Code](gee-orm/day5-hooks)
+- Day 6 - Support Transaction | [Code](gee-orm/day6-transaction)
+- Day 7 - Migrate Database | [Code](gee-orm/day7-migrate)
 
 ## Golang WebAssembly Demo
 
