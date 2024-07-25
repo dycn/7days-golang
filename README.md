@@ -1,4 +1,7 @@
-# 7 days golang apps from scratch
+# 7 days golang programs from scratch
+
+[![CodeSize](https://img.shields.io/github/languages/code-size/geektutu/7days-golang)](https://github.com/geektutu/7days-golang)
+[![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://mit-license.org/)
 
 <details>
 <summary><strong>README 中文版本</strong></summary>
@@ -9,6 +12,10 @@
 7天能写什么呢？类似 gin 的 web 框架？类似 groupcache 的分布式缓存？或者一个简单的 Python 解释器？希望这个仓库能给你答案。
 
 推荐先阅读 **[Go 语言简明教程](https://geektutu.com/post/quick-golang.html)**，一篇文章了解Go的基本语法、并发编程，依赖管理等内容。
+
+推荐 **[Go 语言笔试面试题](https://geektutu.com/post/qa-golang.html)**，加深对 Go 语言的理解。
+
+推荐 **[Go 语言高性能编程](https://geektutu.com/post/high-performance-go.html)**([项目地址](https://github.com/geektutu/high-performance-go))，写出高性能的 Go 代码。
 
 期待关注我的「[知乎专栏](https://zhuanlan.zhihu.com/geekgo)」和「[微博](http://weibo.com/geektutu)」，查看最近的文章和动态。
 
@@ -50,6 +57,20 @@ gorm 准备推出完全重写的 v2 版本(目前还在开发中)，相对 gorm-
 - 第六天：[支持事务(Transaction)](https://geektutu.com/post/geeorm-day6.html) | [Code](gee-orm/day6-transaction)
 - 第七天：[数据库迁移(Migrate)](https://geektutu.com/post/geeorm-day7.html) | [Code](gee-orm/day7-migrate)
 
+
+### 7天用Go从零实现RPC框架 GeeRPC
+
+[GeeRPC](https://geektutu.com/post/geerpc.html) 是一个基于 [net/rpc](https://github.com/golang/go/tree/master/src/net/rpc) 开发的 RPC 框架
+GeeRPC 是基于 Go 语言标准库 `net/rpc` 实现的，添加了协议交换、服务注册与发现、负载均衡等功能，代码约 1k。
+
+- 第一天 - [服务端与消息编码](https://geektutu.com/post/geerpc-day1.html) | [Code](gee-rpc/day1-codec)
+- 第二天 - [支持并发与异步的客户端](https://geektutu.com/post/geerpc-day2.html) | [Code](gee-rpc/day2-client)
+- 第三天 - [服务注册(service register)](https://geektutu.com/post/geerpc-day3.html) | [Code](gee-rpc/day3-service )
+- 第四天 - [超时处理(timeout)](https://geektutu.com/post/geerpc-day4.html) | [Code](gee-rpc/day4-timeout )
+- 第五天 - [支持HTTP协议](https://geektutu.com/post/geerpc-day5.html) | [Code](gee-rpc/day5-http-debug)
+- 第六天 - [负载均衡(load balance)](https://geektutu.com/post/geerpc-day6.html) | [Code](gee-rpc/day6-load-balance)
+- 第七天 - [服务发现与注册中心(registry)](https://geektutu.com/post/geerpc-day7.html) | [Code](gee-rpc/day7-registry)
+
 ### WebAssembly 使用示例
 
 具体的实践过程记录在 [Go WebAssembly 简明教程](https://geektutu.com/post/quick-go-wasm.html)。
@@ -62,7 +83,7 @@ gorm 准备推出完全重写的 v2 版本(目前还在开发中)，相对 gorm-
 </div>
 </details>
 
-What can I write in 7 days? A gin-like web framework? A distributed cache like groupcache? Or a simple Python interpreter? Hope this repo can give you the answer.
+What can be accomplished in 7 days? A gin-like web framework? A distributed cache like groupcache? Or a simple Python interpreter? Hope this repo can give you the answer.
 
 ## Web Framework - Gee
 
@@ -101,6 +122,20 @@ Xorm's desgin is easier to understand than gorm-v1, so the main designs referenc
 - Day 5 - Support Hooks | [Code](gee-orm/day5-hooks)
 - Day 6 - Support Transaction | [Code](gee-orm/day6-transaction)
 - Day 7 - Migrate Database | [Code](gee-orm/day7-migrate)
+
+## RPC Framework - GeeRPC
+
+[GeeRPC](https://geektutu.com/post/geerpc.html) is a [net/rpc](https://github.com/golang/go/tree/master/src/net/rpc)-like RPC framework
+
+Based on golang standard library `net/rpc`, GeeRPC implements more features. eg, protocol exchange, service registration and discovery, load balance, etc.
+
+- Day 1 - Server Message Codec | [Code](gee-rpc/day1-codec)
+- Day 2 - Concurrent Client | [Code](gee-rpc/day2-client)
+- Day 3 - Service Register | [Code](gee-rpc/day3-service )
+- Day 4 - Timeout Processing | [Code](gee-rpc/day4-timeout )
+- Day 5 - Support HTTP Protocol | [Code](gee-rpc/day5-http-debug)
+- Day 6 - Load Balance | [Code](gee-rpc/day6-load-balance)
+- Day 7 - Discovery and Registry | [Code](gee-rpc/day7-registry)
 
 ## Golang WebAssembly Demo
 

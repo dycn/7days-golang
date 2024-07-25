@@ -14,6 +14,8 @@ keywords:
 - Template
 image: post/gee-day6/html.png
 github: https://github.com/geektutu/7days-golang
+book: 七天用Go从零实现系列
+book_title: Day6 模板 Template
 ---
 
 本文是 [7天用Go从零实现Web框架Gee教程系列](https://geektutu.com/post/gee.html)的第六篇。
@@ -169,7 +171,7 @@ type student struct {
 	Age  int8
 }
 
-func formatAsDate(t time.Time) string {
+func FormatAsDate(t time.Time) string {
 	year, month, day := t.Date()
 	return fmt.Sprintf("%d-%02d-%02d", year, month, day)
 }
@@ -178,7 +180,7 @@ func main() {
 	r := gee.New()
 	r.Use(gee.Logger())
 	r.SetFuncMap(template.FuncMap{
-		"formatAsDate": formatAsDate,
+		"FormatAsDate": FormatAsDate,
 	})
 	r.LoadHTMLGlob("templates/*")
 	r.Static("/assets", "./static")

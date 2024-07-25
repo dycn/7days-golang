@@ -15,6 +15,8 @@ keywords:
 - sync.Mutex
 image: post/geecache-day2/concurrent_cache_logo.jpg
 github: https://github.com/geektutu/7days-golang
+book: 七天用Go从零实现系列
+book_title: Day2 单机并发缓存
 ---
 
 ![geecache concurrent cache](geecache-day2/concurrent_cache.jpg)
@@ -186,7 +188,7 @@ func (c *cache) get(key string) (value ByteView, ok bool) {
 ```
 
 - `cache.go` 的实现非常简单，实例化 lru，封装 get 和 add 方法，并添加互斥锁 mu。
-- 在 `add` 方法中，判断了 `c.lru` 是否为 nil，如果不等于 nil 再创建实例。这种方法称之为延迟初始化(Lazy Initialization)，一个对象的延迟初始化意味着该对象的创建将会延迟至第一次使用该对象时。主要用于提高性能，并减少程序内存要求。
+- 在 `add` 方法中，判断了 `c.lru` 是否为 nil，如果等于 nil 再创建实例。这种方法称之为延迟初始化(Lazy Initialization)，一个对象的延迟初始化意味着该对象的创建将会延迟至第一次使用该对象时。主要用于提高性能，并减少程序内存要求。
 
 ## 3 主体结构 Group
 
@@ -238,6 +240,9 @@ func (f GetterFunc) Get(key string) ([]byte, error) {
 
 - 定义接口 Getter 和 回调函数 `Get(key string)([]byte, error)`，参数是 key，返回值是 []byte。
 - 定义函数类型 GetterFunc，并实现 Getter 接口的 `Get` 方法。
+- 函数类型实现某一个接口，称之为接口型函数，方便使用者在调用时既能够传入函数作为参数，也能够传入实现了该接口的结构体作为参数。
+
+> 了解接口型函数的使用场景，可以参考 [Go 接口型函数的使用场景 - 7days-golang Q & A](https://geektutu.com/post/7days-golang-q1.html)
 
 我们可以写一个测试用例来保证回调函数能够正常工作。
 
